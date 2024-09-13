@@ -15,7 +15,6 @@ def BreadthFirstSearch(graph, entry_node, graph_width, graph_length, transformat
             if 0 <= new_node[0] < graph_width and 0 <= new_node[1] < graph_length and graph[new_node[0]][new_node[1]] == "1":
                 queue.put(new_node)
 
-
 def count_number_of_islands(graph):
 
     graph_width, graph_length = len(graph), len(graph[0])
@@ -31,8 +30,6 @@ def count_number_of_islands(graph):
                 BreadthFirstSearch(graph, [i, j], graph_width, graph_length, transformation_coordinates)
     
     return number_of_islands
-
-
 
 input = [["0","1","0","1","0"],
          ["0","0","1","1","0"],
