@@ -37,7 +37,7 @@ for element in elements:
     
 while first_queue.qsize() > 1:
     second_queue.put(first_queue.get())
-    
+
 for i in range(1, n):
     for j in range(n - i, 1, -1):
         second_queue.put(second_queue.get())
@@ -49,4 +49,5 @@ while first_queue.qsize() > 0:
     new_list.append(first_queue.get())
 
 print(elements)
+print(new_list)
 

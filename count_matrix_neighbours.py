@@ -47,3 +47,4 @@ input = [
 ]
 
 count_number_of_regions(input)
+

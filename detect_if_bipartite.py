@@ -6,8 +6,8 @@ class Color(Enum):
     RED = 1
     BLUE = 2
 
-def has_edges(current_node, Edge_dictionary):
-      return current_node in Edge_dictionary  
+def has_edges(current_node, edge_dictionary):
+      return current_node in edge_dictionary  
 
 def BreadthFirstSearch(graph: List[Tuple[int, int]]) -> bool:
     
@@ -52,3 +52,4 @@ input = [
 ]
 
 BreadthFirstSearch(input)
+

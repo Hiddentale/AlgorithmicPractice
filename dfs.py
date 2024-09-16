@@ -13,4 +13,5 @@ def DepthFirstSearch(graph, entry_node):
         if current_node not in visited:
             visited.add(current_node)
             for edge in graph[current_node]:
-                 stack.put(edge)
+                DepthFirstSearch(edge)
+                stack.put(edge)
