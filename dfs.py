@@ -1,7 +1,7 @@
 from queue import LifoQueue
 
 
-def DepthFirstSearch(graph, entry_node):
+def IterativeDepthFirstSearch(graph, entry_node):
     
     stack = LifoQueue()
     stack.put(entry_node)
@@ -13,5 +13,8 @@ def DepthFirstSearch(graph, entry_node):
         if current_node not in visited:
             visited.add(current_node)
             for edge in graph[current_node]:
-                DepthFirstSearch(edge)
-                stack.put(edge)
+                 stack.put(edge)
+
+
+def RecursiveDepthFirstSearch(graph, entry_node, visited, stack):
+    pass
