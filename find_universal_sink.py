@@ -1,17 +1,16 @@
 from collections import defaultdict
 
-def find_universal_sink_list(adjacency_list):
+def find_universal_sink(adjacency_list):
 
     nodes = set(adjacency_list.keys())
-    for neighbors in adjacency_list.values():
-        nodes.update(neighbors)
+    for neighbours in adjacency_list.values():
+        nodes.update(neighbours)
     
     node_in_degree = defaultdict(int)
     node_out_degree = defaultdict(int)
     visited = defaultdict(lambda: False)
 
     def dfs(current_node):
-        print(visited)
         visited[current_node] = True
         if current_node in adjacency_list:
             for adjacent_node in adjacency_list[current_node]:
@@ -24,8 +23,6 @@ def find_universal_sink_list(adjacency_list):
         if visited[node] == False:
             dfs(node)
 
-    print(len(nodes))
-    print(node_in_degree)
     for key, value in node_in_degree.items():
         if value == len(nodes) - 1:
             if key not in node_out_degree:
@@ -40,13 +37,7 @@ adjacency_list = {
     'E': ['D']
 }
 
-adjacency_matrix = [
-    [0, 1, 0, 1, 1],
-    [0, 0, 1, 1, 1],
-    [0, 1, 0, 1, 0],
-    [0, 0, 0, 0, 0],
-    [0, 0, 0, 1, 0]
-]
+print(find_universal_sink(adjacency_list))
 
 def find_universal_sink_matrix(adjacency_matrix):
 
@@ -64,5 +55,13 @@ def find_universal_sink_matrix(adjacency_matrix):
             if adjacency_matrix[index][possible_sinks[0]] != 1:
                 return "No universal sink detected!"
     return "Universal sink detected!"
+
+adjacency_matrix = [
+    [0, 1, 0, 1, 1],
+    [0, 0, 1, 1, 1],
+    [0, 1, 0, 1, 0],
+    [0, 0, 0, 0, 0],
+    [0, 0, 0, 1, 0]
+]
 
 print(find_universal_sink_matrix(adjacency_matrix))
