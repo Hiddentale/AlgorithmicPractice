@@ -1,7 +1,7 @@
 from collections import defaultdict
 from queue import PriorityQueue
 
-def path_exists(graph, edge_weights, start_destination, end_destination, total_range_of_car):
+def find_shortest_path(graph, edge_weights, start_destination, end_destination, total_range_of_car):
     edge_dictionary = defaultdict(list)
     for element in graph:
         current_node, adjacent_node = element[0], element[1]
