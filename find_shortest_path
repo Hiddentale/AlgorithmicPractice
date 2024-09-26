@@ -47,4 +47,4 @@ start_destination = 0
 end_destination = 4
 total_range_of_car = 100
 
-print(path_exists(graph, edge_weights, start_destination, end_destination, total_range_of_car))
+print(find_shortest_path(graph, edge_weights, start_destination, end_destination, total_range_of_car))
